@@ -14,10 +14,10 @@ namespace MOS_Management.API.RepositoryInterface
         Task<Agence> DeleteAgence(Agence a);
         Task<Agence> AddAgence(Agence a);
 
-        List<Agence> GetAgencesAdo();
-        Agence GetAgenceAdo(string id);
-        Agence UpdateAgenceAdo(Agence a);
-        Agence DeleteAgenceAdo(Agence a);
-        Agence AddAgenceAdo(Agence a);
+        List<Agence> GetAgences_();
+        Agence GetAgence_(string id);
+        Agence UpdateAgence_(Agence a);
+        Agence DeleteAgence_(Agence a);
+        Agence AddAgence_(Agence a);
     }
 }

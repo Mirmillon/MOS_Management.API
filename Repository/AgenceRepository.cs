@@ -60,17 +60,17 @@ namespace MOS_Management.API.RepositoryInterface
             return result.Entity;
         }
 
-        public List<Agence> GetAgencesAdo()
+        public List<Agence> GetAgences_()
         {
             return  mos_Communes_DbContext.Agences.ToList();
         }
 
-        public Agence GetAgenceAdo(string id)
+        public Agence GetAgence_(string id)
         {
             return mos_Communes_DbContext.Agences.FirstOrDefault(e => e.AgenceId == id);
         }
 
-        public Agence UpdateAgenceAdo(Agence a)
+        public Agence UpdateAgence_(Agence a)
         {
             var result = mos_Communes_DbContext.Agences.FirstOrDefault(e => e.AgenceId == a.AgenceId);
             if (result != null)
@@ -83,7 +83,7 @@ namespace MOS_Management.API.RepositoryInterface
             return result;
         }
 
-        public Agence DeleteAgenceAdo(Agence a)
+        public Agence DeleteAgence_(Agence a)
         {
             var result = mos_Communes_DbContext.Agences.FirstOrDefault(e => e.AgenceId == a.AgenceId);
             if (result != null)
@@ -95,7 +95,7 @@ namespace MOS_Management.API.RepositoryInterface
             return result;
         }
 
-        public Agence AddAgenceAdo(Agence a)
+        public Agence AddAgence_(Agence a)
         {
             var result = mos_Communes_DbContext.Agences.Add(a);
             mos_Communes_DbContext.SaveChanges();
