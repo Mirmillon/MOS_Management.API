@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MOS_Management.API.RepositoryInterface
 {
-    public class NomenclatureRepository :INomenclatureRepository
+    public class NomenclatureRepository:INomenclatureRepository
     {
         private readonly MOS_Communes_DbContext mos_Communes_DbContext;
 
@@ -103,5 +103,6 @@ namespace MOS_Management.API.RepositoryInterface
             mos_Communes_DbContext.SaveChanges();
             return result.Entity;
         }
+       
     }
 }

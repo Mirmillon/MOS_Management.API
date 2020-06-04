@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MOS_Management.Models.ClassesCommunes;
+using MOS_Management.Models.CLassesMos;
 using MOS_Management.Models.TypeDonnées.Complexes;
 using MOS_Management.Models.TypeDonnées.Complexes.Complexes_;
 using MOS_Management.Models.TypeDonnées.Simple;
@@ -26,10 +27,20 @@ namespace MOS_Management.API.Models
             modelBuilder.Entity<AutoriteEnregistrement>().ToTable("TR_AutoriteEnregistrement");
             modelBuilder.Entity<LangueParlee>().ToTable("TR_LangueParlee");
 
-            modelBuilder.Entity<MosUri>().ToTable("TD_Uri");
-            modelBuilder.Entity<Indicateur>().ToTable("TD_Indicateur");
-            modelBuilder.Entity<MetaDonnee>().ToTable("TD_MetaDonnee");
-            modelBuilder.Entity<PersonnePhysique>().ToTable("TD_PersonnePhysique");
+             modelBuilder.Entity<MosUri>().ToTable("TD_Uri");
+             modelBuilder.Entity<Indicateur>().ToTable("TD_Indicateur");
+             modelBuilder.Entity<MetaDonnee>().ToTable("TD_MetaDonnee");
+             modelBuilder.Entity<PersonnePhysique>().ToTable("TD_PersonnePhysique");
+             modelBuilder.Entity<Texte>().ToTable("TD_Texte");
+             modelBuilder.Entity<Montant>().ToTable("TD_Montant");
+            modelBuilder.Entity<Mesure>().ToTable("TD_Mesure");
+             modelBuilder.Entity<TeleCommunication>().ToTable("TD_TeleCommunication");
+            modelBuilder.Entity<Adresse>().ToTable("TD_Adresse");
+            modelBuilder.Entity<BoileLettreMMS>().ToTable("TD_BoileLettreMMS");
+
+
+
+
         }
 
         public DbSet<Agence> Agences { get; set; }
@@ -44,5 +55,14 @@ namespace MOS_Management.API.Models
         public DbSet<Indicateur> Indicateurs { get; set; }
         public DbSet<MetaDonnee> MetaDonnees { get; set; }
         public DbSet<PersonnePhysique> PersonnePhysiques { get; set; }
+        public DbSet<Texte> Textes { get; set; }
+        public DbSet<Montant> Montants { get; set; }
+        public DbSet<Mesure> Mesure { get; set; }
+        public DbSet<TeleCommunication> TeleCommunications { get; set; }
+        public DbSet<Adresse> Adresses { get; set; }
+        public DbSet<BoileLettreMMS> BoileLettreMMSs { get; set; }
+
+
+
     }
 }

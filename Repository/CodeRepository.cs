@@ -27,6 +27,11 @@ namespace MOS_Management.API.RepositoryInterface
             return await mos_Communes_DbContext.Codes.FirstOrDefaultAsync(e => e.CodeId == id);
         }
 
+        public List<Code> GetCodes_(string nomenclatureId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Code> DeleteCode(Code a)
         {
             var result = await mos_Communes_DbContext.Codes.FirstOrDefaultAsync(e => e.CodeId == a.CodeId);
@@ -46,7 +51,7 @@ namespace MOS_Management.API.RepositoryInterface
             if (result != null)
             {
                 result.Affichage = a.Affichage;
-                result.Langue = a.Langue;
+                //result.Langue = a.Langue;
                 result.CodeId = a.CodeId;
                 result.NomenclatureId = a.NomenclatureId;
                 await mos_Communes_DbContext.SaveChangesAsync();
@@ -67,6 +72,11 @@ namespace MOS_Management.API.RepositoryInterface
             return mos_Communes_DbContext.Codes.ToList();
         }
 
+        public Task<IEnumerable<Code>> GetCodes(string nomenclatureId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Code GetCode_(string id)
         {
             return mos_Communes_DbContext.Codes.FirstOrDefault(e => e.CodeId == id);
@@ -78,7 +88,7 @@ namespace MOS_Management.API.RepositoryInterface
             if (result != null)
             {
                 result.Affichage = a.Affichage;
-                result.Langue = a.Langue;
+                //result.Langue = a.Langue;
                 result.CodeId = a.CodeId;
                 result.NomenclatureId = a.NomenclatureId;
                 mos_Communes_DbContext.SaveChanges();
@@ -105,5 +115,7 @@ namespace MOS_Management.API.RepositoryInterface
             mos_Communes_DbContext.SaveChanges();
             return result.Entity;
         }
+        
+     
     }
 }
